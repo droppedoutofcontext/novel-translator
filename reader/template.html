@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Локальная читалка переводов веб-новелл">
+  <title>Читалка</title>
+  <style>/* READER_STYLES */</style>
+</head>
+<body>
+  <a class="skip" href="#main">К тексту</a>
+  <header class="toolbar">
+    <div class="toolbar-inner">
+      <div class="book-identity">
+        <span class="toolbar-title" id="toolbar-title">Читалка</span>
+        <span class="toolbar-chapter" id="toolbar-chapter"></span>
+      </div>
+      <button class="contents-button" id="contents-button" type="button" aria-label="Оглавление" title="Оглавление" aria-controls="contents" aria-expanded="false">
+        <span class="list-icon" aria-hidden="true"></span><span class="contents-caption">Оглавление</span>
+      </button>
+      <details class="appearance" id="appearance">
+        <summary aria-label="Настройки чтения" title="Настройки чтения">Аа</summary>
+        <div class="tools">
+          <div class="tool-row"><span>Размер текста</span><div class="stepper">
+            <button id="font-down" type="button" aria-label="Уменьшить размер текста">−</button>
+            <output id="font-size" aria-live="polite">20</output>
+            <button id="font-up" type="button" aria-label="Увеличить размер текста">+</button>
+          </div></div>
+          <button id="theme" type="button"><span aria-hidden="true">☀</span> <span id="theme-label">Светлая тема</span></button>
+          <section class="buffer-settings" id="buffer-settings" hidden aria-label="Автопополнение глав">
+            <label for="buffer-count">Держать глав впереди</label>
+            <div class="buffer-controls">
+              <input id="buffer-count" type="number" min="0" max="1000" step="1" value="0" inputmode="numeric" aria-describedby="buffer-help buffer-status">
+              <button id="buffer-save" type="button">Применить</button>
+            </div>
+            <p id="buffer-help" class="buffer-help">0 — выключить пополнение</p>
+            <p id="buffer-status" role="status" aria-live="polite"></p>
+            <button id="buffer-retry" type="button" hidden>Продолжить</button>
+          </section>
+        </div>
+      </details>
+    </div>
+    <progress id="progress" value="0" max="100" aria-label="Прогресс чтения"></progress>
+  </header>
+  <div class="layout">
+    <aside id="contents" aria-label="Оглавление">
+      <label id="book-picker" hidden>
+        <span class="sidebar-label">Книга</span>
+        <select id="book-select" aria-label="Книга"></select>
+      </label>
+      <div class="contents-heading"><span class="sidebar-label">Оглавление</span><span class="original-title" id="original-title"></span></div>
+      <nav id="chapters" aria-label="Главы"></nav>
+    </aside>
+    <main id="main" tabindex="-1">
+      <article id="chapter" hidden>
+        <header class="chapter-header">
+          <p class="chapter-number" id="chapter-number"></p>
+          <h1 id="chapter-title"></h1>
+        </header>
+        <div class="chapter-text" id="chapter-text"></div>
+        <footer class="chapter-footer" id="chapter-footer" aria-label="Переход между главами"></footer>
+      </article>
+      <p class="empty" id="empty" hidden>Переведённые главы появятся здесь после сборки.</p>
+      <noscript><p class="empty">Для оглавления и отображения глав включите JavaScript.</p></noscript>
+    </main>
+  </div>
+  <dialog id="note-dialog" aria-labelledby="note-title">
+    <div class="note-heading">
+      <span class="note-type" id="note-type"></span>
+      <button type="button" id="note-close" aria-label="Закрыть карточку" autofocus>×</button>
+    </div>
+    <h2 id="note-title"></h2>
+    <div id="note-body"></div>
+  </dialog>
+  <script type="application/json" id="library"><!-- READER_DATA --></script>
+  <script>/* READER_SCRIPT */</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Personal libraries and generated readers stay local.
+/books/
+/work/
+/dist/
+reading.json
+
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.env
+.env.*
+!.env.example
+.coverage

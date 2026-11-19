@@ -1,0 +1,33 @@
+{
+  "title": "Маяк в тумане",
+  "originalTitle": "The Lighthouse in the Fog",
+  "author": "Демонстрационный текст проекта",
+  "sourceLanguage": "en",
+  "targetLanguage": "ru",
+  "original": {
+    "url": "https://example.org/lighthouse/",
+    "adapter": "html",
+    "allowedHosts": [
+      "example.org"
+    ],
+    "titleSelector": "h1",
+    "contentSelector": "article#chapter",
+    "paragraphSelector": "p",
+    "catalogue": {
+      "path": "sources/catalogue.html",
+      "url": "https://example.org/lighthouse/"
+    }
+  },
+  "reference": {
+    "name": "Демонстрационный перевод",
+    "path": "chapters",
+    "notes": "Оригинал и перевод созданы специально для проекта."
+  },
+  "chapterSources": {
+    "1": {
+      "title": "The Light in the Fog",
+      "url": "https://example.org/lighthouse/1.html",
+      "input": "sources/chapter-1.html"
+    }
+  }
+}
